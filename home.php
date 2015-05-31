@@ -26,7 +26,9 @@
     </div>
   </nav>
 <div class="container">
-	
+	<div class="card">
+   <h4 class="center-align">Eventos</h4> 
+  </div>
 	
 </div>
 

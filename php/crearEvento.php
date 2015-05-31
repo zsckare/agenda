@@ -44,7 +44,37 @@
 						<textarea name="descripcion" id="description" class="materialize-textarea"></textarea>
 					
 					</div>
+					<div class="col m3">
+						<label>Categoria</label>
+				    <select class="browser-default">
+				      
+				      <option value="1">Option 1</option>
+				      <option value="2">Option 2</option>
+				      <option value="3">Option 3</option>
+				    </select>
+				    
 				</div>
+				<div class="col m3">
+					<div class="row" style="margin-left:2em;;">
+						<p style="font-size:1.2em;">Visibilidad</p>
+						<p>
+					      <input name="visibilidad" type="radio" id="test1" />
+					      <label for="test1">Publico</label>
+					    </p>
+					    <p>
+					      <input name="visibilidad" type="radio" id="test2" />
+					      <label for="test2">Privado</label>
+					    </p>
+					</div>
+				</div>
+				</div>
+				<div class="row">
+					<div class="center-align">
+						<input type="submit" value="Agregar Evento" class="btn red darken-4">
+					</div>
+					
+				</div>
+				
 			</form>
 		</div>
 	</div>

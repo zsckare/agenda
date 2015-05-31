@@ -26,7 +26,7 @@
   </nav>
 <div class="container">
 	<div class="card">
-			
+		  <h4 class="center-align">Registrarse</h4>
   <div class="row">
     <form class="col s12">
     	<div class="row">
