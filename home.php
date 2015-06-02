@@ -8,8 +8,9 @@
   <!-- CSS  -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body>
+<body class="grey lighten-2">
 	  <nav class="red darken-4">
     <div class="nav-wrapper container ">
       <a href="#" class="brand-logo">Agenda</a>
@@ -26,10 +27,28 @@
     </div>
   </nav>
 <div class="container">
-	<div class="card">
+	<div class=" ">
    <h4 class="center-align">Eventos</h4> 
+     <div class="container">
+       <?php 
+        include("php/conexion.inc.php");
+        $link=Conectarse();
+        $result=mysql_query("SELECT * FROM eventos ",$link);
+              echo '<div class="row">';
+              while ($row = mysql_fetch_row($result)){ 
+
+              echo '<div class="card col m4 evento">'.
+                '<h5 class="center-align">'.  "$row[1]".'</h5>'.
+                '<p>Lugar:  '."$row[2]".'</p>'.'<p>Detalles:  '."$row[3]".'</p>'
+                .'<p>Inicio:  '."$row[4]".'</p>'
+                .'<p>Fin: '."$row[5]".'</p>'
+              .'</div>';
+              } 
+              echo "</div>"
+        ?>
+    </div>
   </div>
-	
+
 </div>
 
     <!--  Scripts-->
