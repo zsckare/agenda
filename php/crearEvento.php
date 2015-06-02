@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="card">
 			<h4 class="center-align">Agregar un Nuevo Evento</h4>
-			<form action="">
+			<form action="crearEvento.php" method="post">
 				<div class="row">
 					<div class="input-field col s6 m6">
 						<label for="title">Titulo</label>
@@ -41,16 +41,16 @@
 				<div class="row">
 					<div class="input-field col m6">
 							<label for="description">Descripcion</label>
-						<textarea name="descripcion" id="description" class="materialize-textarea"></textarea>
+						<textarea name="description" id="description" class="materialize-textarea"></textarea>
 					
 					</div>
 					<div class="col m3">
 						<label>Categoria</label>
-				    <select class="browser-default">
+				    <select name="categoria" class="browser-default">
 				      
-				      <option value="1">Option 1</option>
-				      <option value="2">Option 2</option>
-				      <option value="3">Option 3</option>
+				      <option value="1">Familia</option>
+				      <option value="2">Amigos</option>
+				      <option value="3">Trabajo</option>
 				    </select>
 				    
 				</div>
@@ -58,11 +58,11 @@
 					<div class="row" style="margin-left:2em;;">
 						<p style="font-size:1.2em;">Visibilidad</p>
 						<p>
-					      <input name="visibilidad" type="radio" id="test1" />
+					      <input name="visibilidad" type="radio" id="test1" value="0" />
 					      <label for="test1">Publico</label>
 					    </p>
 					    <p>
-					      <input name="visibilidad" type="radio" id="test2" />
+					      <input name="visibilidad" type="radio" id="test2"  value="1"/>
 					      <label for="test2">Privado</label>
 					    </p>
 					</div>
@@ -78,7 +78,44 @@
 			</form>
 		</div>
 	</div>
-	
+
+<?php 
+	if(isset($_POST['titulo'])){
+		$titulo=trim($_POST['titulo']);
+		$lugar=trim($_POST['lugar']);
+		$descr=trim($_POST['description']);
+		$inio=trim($_POST['inicio']);
+		$fin=trim($_POST['fin']);
+		$categoria=trim($_POST['categoria']);
+		$visi=trim($_POST['visibilidad']);
+		$user="1";
+
+	include ("conexion.inc.php");
+    $link=Conectarse();
+
+    $insertar="INSERT INTO `agendazsckare`.`eventos` (
+`id_evento` ,
+`title` ,
+`place` ,
+`description` ,
+`inicio` ,
+`fin` ,
+`categoria` ,
+`visibilidad` ,
+`id_user`
+)
+VALUES (
+NULL , '$titulo', '$lugar', '$descr', '$inio', '$fin', '$categoria', '$visi', '$user'
+);";
+    mysql_query($insertar)or die(mysql_error());
+          echo '<script type="text/javascript">alert("REGISTRADO ");</script>';
+  ?>
+            <SCRIPT LANGUAJE="javascript">
+              location.href="../home.php";
+            </SCRIPT>
+          <?php
+  }
+ ?>
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="../js/materialize.js"></script>
