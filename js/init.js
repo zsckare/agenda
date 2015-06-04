@@ -1,7 +1,8 @@
 (function($){
   $(function(){
 
-    $('.button-collapse').sideNav();
+    $('.button-collapse').sideNav();    
+	$(".dropdown-button").dropdown();	        
     $('.modal-trigger').leanModal();
     $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month

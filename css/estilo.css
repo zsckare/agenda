@@ -3,3 +3,16 @@
 	padding: 1em !important;
 	margin-right: 1.2em;
 }
+#aniadir{
+	position: relative;
+	top: -2.8em;
+	left: -1.7em;
+}
+.be-red{
+	color: #b71c1c;
+}
+.cerrar{
+	position: relative;
+	top: -15em;
+	right: -12em;
+}

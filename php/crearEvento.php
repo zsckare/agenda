@@ -9,8 +9,8 @@
   <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
-
+<body class="grey lighten-2">
+<?php include 'nav.php'; ?>
 	<div class="container">
 		<div class="card">
 			<h4 class="center-align">Agregar un Nuevo Evento</h4>
@@ -58,7 +58,7 @@
 					<div class="row" style="margin-left:2em;;">
 						<p style="font-size:1.2em;">Visibilidad</p>
 						<p>
-					      <input name="visibilidad" type="radio" id="test1" value="0" />
+					      <input name="visibilidad" type="radio" id="test1" value="0" checked/>
 					      <label for="test1">Publico</label>
 					    </p>
 					    <p>
