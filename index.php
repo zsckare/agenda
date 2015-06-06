@@ -8,33 +8,36 @@
   <!-- CSS  -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/estilo.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body class="grey lighten-2">
+
   <nav class="red darken-4">
     <div class="nav-wrapper container ">
       <a href="#" class="brand-logo">Agenda</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="registrarse.php">Registrarse</a></li>
-        <li><a href="#login" class="modal-trigger">Log-in</a></li>
+        <li><a href="registrarse.php">Registrarse <i class="mdi-action-perm-identity small left"></i></a></li>
+        <li><a href="#login" class="modal-trigger">Log-in<i class="mdi-action-input small left"></i></a></li>
       </ul>
       <ul id="nav-mobile" class="side-nav">
-                <li><a href="registrarse.php">Registrarse</a></li>
-        <li><a href="">Log-in</a></li>
+        <li><a href="registrarse.php">Registrarse<i class="mdi-action-perm-identity small left"></i></a></li>
+        <li><a href="">Log-in<i class="mdi-action-input small left"></i></a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </div>
   </nav>
+
   <div class="container">
     <div class="">
       <h3 class="center-align">Eventos Publicos</h3>
-      <?php 
+      <?php   
         include("php/conexion.inc.php");
         $link=Conectarse();
         $result=mysql_query("SELECT * FROM eventos WHERE visibilidad='0' ",$link);
               echo '<div class="row">';
               while ($row = mysql_fetch_row($result)){ 
 
-              echo '<div class="card col m4 evento">'.
+              echo '<div class="card col m3 s12 evento">'.
                 '<h5 class="center-align">'.  "$row[1]".'</h5>'.
                 '<p>Lugar:  '."$row[2]".'</p>'.'<p>Detalles:  '."$row[3]".'</p>'
                 .'<p>Inicio:  '."$row[4]".'</p>'

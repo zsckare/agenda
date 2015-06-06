@@ -1,7 +1,13 @@
 .evento	{
-	
-	padding: 1em !important;
 	margin-right: 1.2em;
+	max-height: 15em;
+
+}
+.titulo{
+	font-size: 1.2em;
+}
+.tit{
+	font-size: 2em;
 }
 #aniadir{
 	position: relative;
@@ -13,6 +19,29 @@
 }
 .cerrar{
 	position: relative;
-	top: -15em;
+	top: -14em;
 	right: -12em;
 }
+.be-black{
+	color: #b71c1c  !important;
+}
+.rigth-space {
+	margin-left: 9.75em !important;
+}
+.contenedor {
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 95%; }
+
+@media only screen and (min-width : 601px) {
+  .contenedor{
+    width: 85%; } }
+
+@media only screen and (min-width : 993px) {
+  .contenedor {
+    width: 70%; } }
+
+.contenedor .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem; }

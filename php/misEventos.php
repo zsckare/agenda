@@ -31,28 +31,29 @@
     </div> 
     </div>
  
-     <div class="container">
+
        <?php
        $id=$_GET['id'];
         include("conexion.inc.php");
         $link=Conectarse();
         $result=mysql_query("SELECT * FROM eventos WHERE id_user='$id' ",$link);
-              echo '<div class="row">';
+              echo '<div class="rigth-space  row">';
               while ($row = mysql_fetch_row($result)){ 
 
-              echo '<div class="card col m4 evento">'
+              echo '<div class="card col m3 evento">'
               .
                 '<h5 class="center-align">'.  "$row[1]".'</h5>'.
-                '<p>Lugar:  '."$row[2]".'</p>'.'<p>Detalles:  '."$row[3]".'</p>'
+                '<p>Lugar:  '."$row[2]".'</p>'
                 .'<p>Inicio:  '."$row[4]".'</p>'
-                .'<p>Fin: '."$row[5]".'</p>'
+                .'<p>Fin: '."$row[5]".'</p>'.
+                '<p><a class="be-black" href="  verEvento.php?id='.$row[0].'">+   Ver mas detalles </a></p>'
                 .
               '<a href="" class="cerrar"><i class="small mdi-content-clear be-red"></i></a>'
               .'</div>';
               } 
               echo "</div>"
         ?>
-    </div>
+
   </div>
 
 </div>

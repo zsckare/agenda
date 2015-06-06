@@ -11,7 +11,7 @@
 	if($resultado = mysql_fetch_array($con)){
 		$_SESSION['u_user']=$user;
 		$_SESSION['u_id']=$resultado[0];
-		header("Location: home.php");
+		header("Location: php/home.php");
 		echo "sesion iniciada";
 
 	}else{
