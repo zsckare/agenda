@@ -41,15 +41,13 @@
               while ($row = mysql_fetch_row($result)){ 
 
               echo '<div class="card col m3 evento">'
-              .
-                '<h5 class="center-align">'.  "$row[1]".'</h5>'.
-                '<p>Lugar:  '."$row[2]".'</p>'
-                .'<p>Inicio:  '."$row[4]".'</p>'
-                .'<p>Fin: '."$row[5]".'</p>'.
-                '<p><a class="be-black" href="  verEvento.php?id='.$row[0].'">+   Ver mas detalles </a></p>'
-                .
-              '<a href="" class="cerrar"><i class="small mdi-content-clear be-red"></i></a>'
-              .'</div>';
+              . '<a href="borrarEvento.php?id='.$row[0].'" class="cerrar"><i class="small mdi-content-clear be-red"></i></a>'
+              .'<p class="mover-abajo"><a class="be-black" href="verEvento.php?id='.$row[0].'">+   Ver mas detalles </a></p>'
+              
+              .'<div class="mover-arriba"> <h5 class="center-align ">'.$row[1].'</h5>
+                <p class="ma" >Lugar:  '.$row[2].'</p></div>.
+                
+             </div>';
               } 
               echo "</div>"
         ?>

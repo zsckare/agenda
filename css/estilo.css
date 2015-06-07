@@ -1,6 +1,7 @@
 .evento	{
 	margin-right: 1.2em;
 	max-height: 15em;
+	height: 300px;
 
 }
 .titulo{
@@ -18,12 +19,19 @@
 	color: #b71c1c;
 }
 .cerrar{
+position: relative;
+right: -11.5em;
+}
+.mover-arriba{
 	position: relative;
-	top: -14em;
-	right: -12em;
+	top: -3em;
+}
+.mover-abajo{
+position: relative;
+top: -3em;
 }
 .be-black{
-	color: #b71c1c  !important;
+	color: #1a237e   !important;
 }
 .rigth-space {
 	margin-left: 9.75em !important;

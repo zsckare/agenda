@@ -20,7 +20,7 @@
       header("Location: index.php");
     }
   ?>
-	  <?php include 'nav.php'; ?>
+	  <?php include '../navegacion.php'; ?>
 <div class="contenedor">
 	<div class=" ">
    <h4 class="card center-align">Eventos</h4> 

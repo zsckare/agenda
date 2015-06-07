@@ -22,6 +22,7 @@
   ?>
 <?php include 'nav.php'; ?>
 <div class="container">
+
 	<div class="card">
    <?php
       	$id=$_GET['id'];
@@ -30,18 +31,24 @@
         $result=mysql_query("SELECT * FROM eventos WHERE id_evento='$id' ",$link);
 
         $row = mysql_fetch_row($result);
+        if($row[9]==null){
+          $mapa='<img src="../img/mapa.jpg" alt="" class="responsive-img">';
+        }
+        else{
+          $mapa=$row[9];
+        }
         	echo '<h4 class="center-align">'.$row[1].'</h4>';
          echo '<div class="row">
   <div class="col m6 s12">
     <div class="row">
       <div class="col m10 s12">
-        <p class="titulo">Lugar:</p>
-        <p>'.$row[2].'</p>
+        <p class="titulo">Lugar:    '.$row[2].'</p>
+        
       </div>
     </div>
     <div class="row">
       <div class="col m10 s12">
-        '.$row[9].'
+        '.$mapa.'
       </div>
     </div>
   </div>

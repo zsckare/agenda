@@ -33,12 +33,14 @@
 					<div class="input-field col s6 m6">
 						
 						<label for="place">Lugar</label>
-						<input type="text" name="lugar" id="place">
+						<input type="text" name="ubicacion" id="place">
 					</div>
 				</div>
 				
 				<div class="row">
-						<div class="input-field col s6 m6">
+					<div class="col m6 s12">
+						<div class="row">
+							<div class="input-field col s6 m6">
 							<label for="fecha">Inicio</label>
 							<input id="fecha" type="date" name="fecinicio" class="datepicker" required>
 						</div>
@@ -46,6 +48,13 @@
 							<label for="fechafin">Fin</label>
 							<input id="fechafin" type="date" name="fecfin" class="datepicker" required>
 						</div>
+						</div>
+					</div>
+					<div class=" input-field col m6 s12">						
+						<label for="map">Mapa</label>
+						<input type="text" name="mapa" id="map">
+					</div>
+			
 				</div>
 				<div class="row">
 					<div class="input-field col m6">
@@ -91,13 +100,14 @@
 <?php 
 	if(isset($_POST['titulo'])){
 		$titulo=trim($_POST['titulo']);
-		$lugar=trim($_POST['lugar']);
+		$lugar=trim($_POST['ubicacion']);
 		$descr=trim($_POST['description']);
 		$inio=date("Y-m-d", strtotime($_POST['fecinicio']));
 		$fin=date("Y-m-d", strtotime($_POST['fecfin']));
 		$categoria=trim($_POST['categoria']);
 		$visi=trim($_POST['visibilidad']);
 		$user=$_SESSION['u_id'];
+		$mapa=trim($_POST['mapa']);
 		echo $inio." ".$fin ;
 	include ("conexion.inc.php");
     $link=Conectarse();
@@ -111,16 +121,16 @@
 `fin` ,
 `categoria` ,
 `visibilidad` ,
-`id_user`
+`id_user`,`mapa`
 )
 VALUES (
-NULL , '$titulo', '$lugar', '$descr', '$inio', '$fin', '$categoria', '$visi', '$user'
+NULL , '$titulo', '$lugar', '$descr', '$inio', '$fin', '$categoria', '$visi', '$user', '$mapa'
 );";
     mysql_query($insertar)or die(mysql_error());
           echo '<script type="text/javascript">alert("REGISTRADO ");</script>';
   ?>
             <SCRIPT LANGUAJE="javascript">
-              location.href="../home.php";
+              location.href="home.php";
             </SCRIPT>
           <?php
   }

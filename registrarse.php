@@ -10,16 +10,17 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body class="grey lighten-2">
-	  <nav class="red darken-4">
-    <div class="nav-wrapper container ">
-      <a href="index.php" class="brand-logo">Agenda</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="registrarse.php">Registrarse</a></li>
-        <li><a href="#login" class="modal-trigger">Log-in</a></li>
+ <nav class="red darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo">Agenda</a>
+      <ul class="right hide-on-med-and-down">
+  <li><a href="registrarse.php">Registrarse <i class="mdi-action-perm-identity small left"></i></a></li>
+        <li><a href="#login" class="modal-trigger">Log-in<i class="mdi-action-input small left"></i></a></li>
+      
       </ul>
+
       <ul id="nav-mobile" class="side-nav">
-                <li><a href="registrarse.php">Registrarse</a></li>
-        <li><a href="">Log-in</a></li>
+  <li><a href="registrarse.php">Registrarse <i class="mdi-action-perm-identity small left"></i></a></li>
+        <li><a href="#login" class="modal-trigger">Log-in<i class="mdi-action-input small left"></i></a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </div>
