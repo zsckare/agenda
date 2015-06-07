@@ -40,11 +40,11 @@
 				<div class="row">
 						<div class="input-field col s6 m6">
 							<label for="fecha">Inicio</label>
-							<input id="fecha" type="date" name="fecinicio" class="datepicker" required>
+							<input id="fecha" type="date" name="inicio" class="datepicker" required>
 						</div>
 						<div class="input-field col s6 m6">
 							<label for="fechafin">Fin</label>
-							<input id="fechafin" type="date" name="fecfin" class="datepicker" required>
+							<input id="fechafin" type="date" name="fin" class="datepicker" required>
 						</div>
 				</div>
 				<div class="row">
@@ -93,25 +93,17 @@
 		$titulo=trim($_POST['titulo']);
 		$lugar=trim($_POST['lugar']);
 		$descr=trim($_POST['description']);
-		$inio=date("Y-m-d", strtotime($_POST['fecinicio']));
-		$fin=date("Y-m-d", strtotime($_POST['fecfin']));
+		$inio=trim($_POST['inicio']);
+		$fin=trim($_POST['fin']);
 		$categoria=trim($_POST['categoria']);
 		$visi=trim($_POST['visibilidad']);
-		$user=$_SESSION['u_id'];
-		echo $inio." ".$fin ;
+		$user="1";
+
 	include ("conexion.inc.php");
     $link=Conectarse();
 
-    $insertar="INSERT INTO `agenda`.`eventos` (
-`id_evento` ,
-`title` ,
-`place` ,
-`description` ,
-`inicio` ,
-`fin` ,
-`categoria` ,
-`visibilidad` ,
-`id_user`
+    $insertar="INSERT INTO `agenda`.`contactos` (
+
 )
 VALUES (
 NULL , '$titulo', '$lugar', '$descr', '$inio', '$fin', '$categoria', '$visi', '$user'

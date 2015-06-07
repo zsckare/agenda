@@ -12,7 +12,7 @@
 <body class="grey lighten-2">
 	  <nav class="red darken-4">
     <div class="nav-wrapper container ">
-      <a href="#" class="brand-logo">Agenda</a>
+      <a href="index.php" class="brand-logo">Agenda</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="registrarse.php">Registrarse</a></li>
         <li><a href="#login" class="modal-trigger">Log-in</a></li>
@@ -71,7 +71,7 @@
   </div>
 	</div>
 </div>
-
+<?php include 'loginmodal.php'; ?>
 <?php 
   
   if(isset($_POST['nick'])){
@@ -86,7 +86,7 @@
     include ("php/conexion.inc.php");
     $link=Conectarse();
 
-    $insertar="INSERT INTO `agendazsckare`.`usuarios` (`id_user` ,`nick` ,`nombre` ,`paterno` ,`materno` ,`email` ,`password`)VALUES (NULL , '$nick', '$nombre', '$paterno', '$materno', '$email', '$pass');";
+    $insertar="INSERT INTO `agenda`.`usuarios` (`id_user` ,`nick` ,`nombre` ,`paterno` ,`materno` ,`email` ,`password`)VALUES (NULL , '$nick', '$nombre', '$paterno', '$materno', '$email', '$pass');";
     mysql_query($insertar)or die(mysql_error());
           echo '<script type="text/javascript">alert("REGISTRADO ");</script>';
   ?>

@@ -10,7 +10,16 @@
   <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+  <?php 
+    session_start();
+    if(isset($_SESSION['u_user'])){
 
+    }
+    else{
+      header("Location: index.php");
+    }
+  ?>
+  <?php include 'nav.php'; ?>
 
      <div class="container">
 		<div class="card">

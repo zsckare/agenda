@@ -25,39 +25,27 @@
     </div>
   </nav>
   <div class="container">
-    <div class="card">
+    <div class="">
       <h3 class="center-align">Eventos Publicos</h3>
+      <?php 
+        include("php/conexion.inc.php");
+        $link=Conectarse();
+        $result=mysql_query("SELECT * FROM eventos WHERE visibilidad='0' ",$link);
+              echo '<div class="row">';
+              while ($row = mysql_fetch_row($result)){ 
+
+              echo '<div class="card col m4 evento">'.
+                '<h5 class="center-align">'.  "$row[1]".'</h5>'.
+                '<p>Lugar:  '."$row[2]".'</p>'.'<p>Detalles:  '."$row[3]".'</p>'
+                .'<p>Inicio:  '."$row[4]".'</p>'
+                .'<p>Fin: '."$row[5]".'</p>'
+              .'</div>';
+              } 
+              echo "</div>"
+        ?>
     </div>
   </div>
-  
-  <div id="login" class="modal">
-    <div class="modal-content">
-      <h4 class="center-align">Log In</h4>
-       <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input  id="first_name" type="text" class="validate">
-          <label for="first_name">Usuario</label>
-        </div> 
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Contraseña</label>
-        </div>
-      </div>
-      <div class="row">
-        
-          <div class="input-field col s6">
-          <input type="submit" class="btn" value="Entrar">
-          
-        </div>
-      </div>
-    </form>
-  </div>    
-    </div>
-  </div>
+  <?php include 'loginmodal.php'; ?>
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>

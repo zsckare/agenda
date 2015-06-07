@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body class="grey lighten-2">
+    <?php 
+    session_start();
+    if(isset($_SESSION['u_user'])){
+
+    }
+    else{
+      header("Location: ../index.php");
+    }
+  ?>
 <?php include 'nav.php'; ?>
 <div class="container">
 	<div class=" ">
